@@ -73,7 +73,7 @@ export default class Map extends React.Component {
       // 加载动画
       Toast.loading("加载中...", 0, null, false)
 
-      const res = await axios.get(`http://10.1.1.102:8080/area/map?id=${id}`)
+      const res = await axios.get(`http://localhost:8080/area/map?id=${id}`)
       // 关闭loading
       Toast.hide()
       const data = res.data.body
@@ -185,7 +185,7 @@ export default class Map extends React.Component {
     try {
       Toast.loading("加载中...", 0, null, false)
 
-      const res = await axios.get(`http://10.1.1.102:8080/houses?cityId=${id}`)
+      const res = await axios.get(`http://localhost:8080/houses?cityId=${id}`)
 
       Toast.hide()
       this.setState({
@@ -203,7 +203,7 @@ export default class Map extends React.Component {
         <div className={styles.imgWrap}>
           <img
             className={styles.img}
-            src={`http://10.1.1.102:8080${item.houseImg}`}
+            src={`http://localhost:8080${item.houseImg}`}
             alt=""
           />
         </div>
